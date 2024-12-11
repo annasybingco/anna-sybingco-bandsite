@@ -1,0 +1,264 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #323232;
+}
+
+.nav__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1em;
+
+    @include tablet {
+    flex-direction: row;
+    padding-left: 2em;
+    gap: 3em;
+    }
+}
+
+
+.nav__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    @include tablet {
+        justify-content: flex-start;
+        gap: 1em;
+    }
+}
+
+.nav__item {
+    list-style-type: none;
+    color: #fff;
+    width: 80px;
+    padding: 1em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    position: relative;
+
+    @include tablet {
+        justify-content: flex-start;
+        width: 10%;
+    }
+}
+
+.nav__item--active::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #fff
+}
+
+.nav__item--inactive {
+    color: #E1E1E1;
+}
+
+.hero {
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/assets/images/hero-bio.jpg');
+    background-size: cover;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+
+    &__banner {
+        color: #fff;
+    }
+
+    @include tablet {
+        height: 50vh;
+    }
+}
+
+.about {
+    margin: 0 auto; // Center content
+    padding: 1em;
+    width: 90vw; 
+  
+    @include tablet {
+        width: 80vw;
+    }
+   
+  }
+  
+  .about__info {
+    display: flex;
+    flex-wrap: wrap; 
+  }
+  
+  .about__image {
+    max-width: 100%; 
+
+  }
+  
+  .about__text {
+    display: flex; // Take 50% of the width, but flexible
+    margin: 0;
+    padding-bottom: 1em;
+  }
+
+.info-whole {
+    margin: 1em;
+}
+
+.info {
+
+    @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+}
+
+.info__copy {
+    width: 90%;
+
+    @include tablet {
+        width: 45%;
+    }
+}
+
+.gallery {
+    background-color: #fafafa;
+    padding: 1em;
+}
+
+.gallery__photos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1em;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    @include desktop {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.gallery__photo {
+    width: 100%;
+
+    @include tablet {
+        width: 30%;
+    }
+
+    @include desktop {
+        width: 30%;
+    }
+}
+
+footer {
+    background-color: #323232;
+    padding: 1em;
+    color: #fff;
+
+    @include tablet {
+        padding: 1em 2.25em;
+    }
+
+    @include desktop {
+        padding: 1em 5em,
+    }
+}
+
+.footer__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+.footer__social {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+}
+
+.icons {
+    display: flex;
+    gap: 1em;
+}
+.footer__social-item {
+    width: 25px;
+    height: 25px;
+}
+
+.footer__info {
+    padding-bottom: 1em;
+    display: flex;
+    justify-content: space-evenly;
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.footer__details {
+    width: 60%;
+    padding-bottom: 1em;
+
+    @include tablet {
+        width: 40%;
+    }
+}
+
+.logo-mobile {
+    display: block;
+
+    @include tablet {
+        display: none;
+    }
+
+}
+
+.logo-desktop {
+    display: none;
+
+    @include tablet {
+        display: block;
+        width: 200px;
+    }
+}
