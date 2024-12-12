@@ -1,3 +1,7 @@
+@use "./typography";
+@use "./mixins" as *;
+@use "./variables" as *;
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -27,6 +31,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     width: 100%;
 
     @include tablet {
@@ -36,21 +41,19 @@
 }
 
 .nav__item {
-    list-style-type: none;
-    text-decoration: none;
-    color: #fff;
-    width: 80px;
-    padding: 1em;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
- 
+    list-style-type: none;
+    text-decoration: none;
+    color: #fff;
+    width: 50vw;
+    padding: 1em;
     position: relative;
 
     @include tablet {
         justify-content: flex-start;
-        width: 10%;
+        width: 7em;
     }
 }
 
@@ -68,6 +71,7 @@
     color: #E1E1E1;
 }
 
+/* Footer */
 footer {
     background-color: #323232;
     padding: 1em;
@@ -78,7 +82,7 @@ footer {
     }
 
     @include desktop {
-        padding: 1em 5em,
+        padding: 1em 5em;
     }
 }
 
@@ -88,61 +92,69 @@ footer {
     justify-content: space-between;
 
     @include tablet {
-        display: flex;
         flex-direction: row;
     }
 }
-
 
 .footer__social {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    padding-bottom: 1em;
 
     @include tablet {
-        display: flex;
         flex-direction: row;
         align-items: center;
     }
-
 }
 
 .icons {
     display: flex;
     gap: 1em;
 }
+
 .footer__social-item {
     width: 25px;
     height: 25px;
 }
 
 .footer__info {
-    padding-bottom: 1em;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 1em; /* Add consistent spacing between info sections */
 
     @include tablet {
-        display: flex;
         flex-direction: row;
     }
 }
 
 .footer__details {
-    width: 60%;
-    padding-bottom: 1em;
+    width: 100%;
+    padding-bottom: 1em; /* Adjust spacing */
 
     @include tablet {
         width: 40%;
     }
 }
 
+.footer__title {
+    display: flex;
+    padding-bottom: 1em;
+}
+
+.footer__copyright {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
 .logo-mobile {
     display: block;
+    width: 30%;
+    padding-bottom: 1em;
 
     @include tablet {
         display: none;
     }
-
 }
 
 .logo-desktop {
