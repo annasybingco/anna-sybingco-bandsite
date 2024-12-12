@@ -86,7 +86,7 @@ footer {
     }
 
     @include desktop {
-        padding: 1em 5em;
+        padding: 2em 5em;
     }
 }
 
@@ -117,6 +117,7 @@ footer {
     @include tablet {
         flex-direction: row;
         align-items: center;
+        padding: 0;
     }
 }
 
@@ -137,6 +138,12 @@ footer {
 
     @include tablet {
         flex-direction: row;
+        justify-content: space-between;
+    }
+
+    @include desktop{
+        justify-content: flex-start;
+        gap: 5em;
     }
 }
 
@@ -145,7 +152,11 @@ footer {
     padding-bottom: 1em; /* Adjust spacing */
 
     @include tablet {
-        width: 40%;
+        max-width: 30%;
+    }
+
+    @include desktop {
+        max-width: 20%;
     }
 }
 
