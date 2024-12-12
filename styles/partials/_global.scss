@@ -21,7 +21,7 @@
 
     @include tablet {
     flex-direction: row;
-    padding-left: 2em;
+    padding-left: 2.25em;
     gap: 3em;
     }
 }
@@ -78,7 +78,7 @@ footer {
     color: #fff;
 
     @include tablet {
-        padding: 1em 2.25em;
+        padding: 3em 2.25em;
     }
 
     @include desktop {
@@ -93,6 +93,8 @@ footer {
 
     @include tablet {
         flex-direction: row;
+        padding-bottom: 2em;
+        align-items: center;
     }
 }
 
@@ -162,6 +164,6 @@ footer {
 
     @include tablet {
         display: block;
-        width: 200px;
+        width: 20%;
     }
 }
