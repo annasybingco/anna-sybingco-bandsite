@@ -156,6 +156,11 @@ a {
 
     @include tablet {
         width: 30%;
+        filter: grayscale(100%);
+
+        &:hover {
+            filter: grayscale(0);
+        }
     }
 
     @include desktop {
