@@ -121,7 +121,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 1em;
+  padding: 1em;
 }
 @media screen and (min-width: 768px) {
   .nav__logo {
@@ -163,7 +163,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .nav__item {
-    justify-content: flex-start;
+    justify-content: center;
     width: 7em;
   }
 }
@@ -174,7 +174,7 @@ p {
   width: 100%;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -13px;
   background: #fff;
 }
 
@@ -246,7 +246,7 @@ footer {
 .footer__info {
   display: flex;
   flex-direction: column;
-  gap: 1em; /* Add consistent spacing between info sections */
+  gap: 1em;
 }
 @media screen and (min-width: 768px) {
   .footer__info {
@@ -263,7 +263,7 @@ footer {
 
 .footer__details {
   width: 100%;
-  padding-bottom: 1em; /* Adjust spacing */
+  padding-bottom: 1em;
 }
 @media screen and (min-width: 768px) {
   .footer__details {
@@ -459,7 +459,8 @@ a {
 @media screen and (min-width: 1280px) {
   .gallery__photos {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 3em;
   }
 }
 
