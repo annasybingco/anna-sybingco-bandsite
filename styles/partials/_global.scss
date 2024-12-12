@@ -24,6 +24,10 @@
     padding-left: 2.25em;
     gap: 3em;
     }
+
+    @include desktop {
+        padding-left: 3.94em;
+    }
 }
 
 
@@ -92,6 +96,12 @@ footer {
     justify-content: space-between;
 
     @include tablet {
+        flex-direction: row;
+        padding-bottom: 2em;
+        align-items: center;
+    }
+
+    @include desktop {
         flex-direction: row;
         padding-bottom: 2em;
         align-items: center;

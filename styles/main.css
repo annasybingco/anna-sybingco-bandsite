@@ -130,6 +130,11 @@ p {
     gap: 3em;
   }
 }
+@media screen and (min-width: 1280px) {
+  .nav__logo {
+    padding-left: 3.94em;
+  }
+}
 
 .nav__list {
   display: flex;
@@ -200,6 +205,13 @@ footer {
   justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
+  .footer__top {
+    flex-direction: row;
+    padding-bottom: 2em;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1280px) {
   .footer__top {
     flex-direction: row;
     padding-bottom: 2em;
@@ -306,6 +318,11 @@ a {
     padding: 2.25em;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero {
+    padding: 3.94em;
+  }
+}
 
 .about {
   display: flex;
@@ -318,7 +335,12 @@ a {
   .about {
     width: 100vw;
     justify-content: center;
-    padding: 1 2.25em;
+    padding: 1em 2.25em;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .about {
+    padding: 2em 3.94em;
   }
 }
 
@@ -396,6 +418,11 @@ a {
 @media screen and (min-width: 768px) {
   .gallery {
     padding: 2.25em;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery {
+    padding: 2em 3.94em;
   }
 }
 
