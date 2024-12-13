@@ -51,9 +51,7 @@ a {
         padding: 2em 3.94em;
     }
    
-  }
-  
-  .about__info {
+ &__info {
     display: flex;
     flex-wrap: wrap; 
 
@@ -62,7 +60,7 @@ a {
     }
   }
   
-  .about__image {
+&__image {
     display: flex;
     max-width: 100%; 
     gap: 2em;
@@ -73,7 +71,7 @@ a {
 
   }
   
-  .about__text {
+&__copy {
     display: flex; // Take 50% of the width, but flexible
     padding: 1em 0;
 
@@ -82,8 +80,9 @@ a {
         padding-bottom: 1em;
     }
   }
+}
 
-.info-whole {
+.bio {
     display: flex;
     flex-direction: column;
     padding: 1em;
@@ -94,25 +93,26 @@ a {
         padding: 0 7em;
         margin-bottom: 1em;
     }
-}
 
-.info {
+    &__segment {
     width: 100%;
 
     @include tablet {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+    }
 }
 
-.info__copy {
+
+&__copy {
     padding-bottom: 1em;
     overflow: wrap;
 
     @include tablet {
         width: 45%;
     }
+}
 }
 
 .gallery {
@@ -126,13 +126,9 @@ a {
     @include desktop {
         padding: 2em 3.94em;
     }
-}
 
-.gallery h2 {
-    padding-bottom: 1em;
-}
 
-.gallery__photos {
+&__photos {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -151,7 +147,7 @@ a {
     }
 }
 
-.gallery__photo {
+&__photo {
     width: 100%;
 
     @include tablet {
@@ -167,4 +163,8 @@ a {
         width: 30%;
     }
 }
+}
 
+.gallery h2 { //this might need reworking
+    padding-bottom: 1em;
+}
