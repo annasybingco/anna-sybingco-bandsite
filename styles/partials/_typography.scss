@@ -47,6 +47,12 @@ p {
     line-height: 18px;
 }
 
+.about__copy {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+}
 .footer__title {
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 700;
@@ -65,18 +71,6 @@ p {
         font-weight: 500;
         font-size: 14px;
         line-height: 22px;
-    
-        @include tablet {
-            font-weight: 500;
-            font-size: 24px;
-            line-height: 32px;
-        }
-    
-        @include desktop {
-            font-weight: 500;
-            font-size: 24px;
-            line-height: 32px;
-        }
     }
 
 
@@ -112,6 +106,12 @@ p {
     font-size: 14px;
     line-height: 22px;
 }
+
+.about__quote {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+    }
 
 .footer__title {
     font-family: 'Nunito Sans', sans-serif;

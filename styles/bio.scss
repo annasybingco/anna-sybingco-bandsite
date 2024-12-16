@@ -21,7 +21,7 @@ a {
     padding: 1em;
 
     &__banner {
-        color: #fff;
+        color: $tertiary-color;
     }
 
     @include tablet {
@@ -54,6 +54,7 @@ a {
  &__info {
     display: flex;
     flex-wrap: wrap; 
+    width: 100%;
 
     @include tablet {
         justify-content: center;
@@ -70,9 +71,20 @@ a {
     }
 
   }
+
+&__quote {
+    max-width: 100%; 
+    padding-top: 1em;
+    padding-bottom: 0;
+    
+    @include tablet {
+        max-width: 80%; 
+        margin: 0 auto; 
+    }
+}
   
 &__copy {
-    display: flex; // Take 50% of the width, but flexible
+    display: flex;
     padding: 1em 0;
 
     @include tablet {
@@ -115,7 +127,7 @@ a {
 }
 
 .gallery {
-    background-color: #fafafa;
+    background-color: $background-color;
     padding: 1em;
 
     @include tablet {
@@ -164,6 +176,6 @@ a {
 }
 }
 
-.gallery h2 { //this might need reworking
+.gallery h2 {
     padding-bottom: 1em;
 }
