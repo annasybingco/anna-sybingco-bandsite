@@ -10,6 +10,7 @@
 
 body {
     color: $primary-color;
+    font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
 }
 
 .navbar {
@@ -60,6 +61,14 @@ body {
     width: 50vw;
     padding: 1em;
 
+    &--active {
+    border-bottom: 1px solid $tertiary-color;
+    }
+
+    &--inactive {
+    color: $inactive-color;
+    }
+
     @include tablet {
         justify-content: center;
         width: 7em;
@@ -72,14 +81,6 @@ body {
         }
     }
 }
-}
-
-.navbar__item--active {
-    border-bottom: 1px solid $tertiary-color;
-}
-
-.navbar__item--inactive {
-    color: $inactive-color;
 }
 
 /* Footer */
@@ -177,7 +178,7 @@ footer {
     flex-direction: column;
     margin-top: 1em;
 }
-.footer-logo--mobile {
+.footer-logo {
     display: block;
     width: 30%;
     padding-bottom: 1em;
@@ -185,13 +186,13 @@ footer {
     @include tablet {
         display: none;
     }
-}
 
-.footer-logo--desktop {
+    &--desktop {
     display: none;
 
     @include tablet {
-        display: block;
-        width: 15%;
+    display: block;
+    width: 15%;   
     }
+}
 }

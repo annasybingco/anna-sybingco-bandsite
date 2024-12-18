@@ -19,104 +19,94 @@
   font-style: bold;
 }
 h1, h2 {
-  font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 h4 {
-  font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 20px;
+  font-size: 1.5rem;
+  line-height: 1.25rem;
 }
 
 h3 {
-  font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.875rem;
+  line-height: 1.37rem;
 }
 
 p {
-  font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 0.812rem;
+  line-height: 1.125rem;
 }
 
 .about__copy {
-  font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 0.812rem;
+  line-height: 1.125rem;
 }
 
 .footer__title {
-  font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
-  line-height: 18px;
-  font-size: 13px;
+  line-height: 1.125rem;
+  font-size: 0.812rem;
 }
 
 .footer__copy {
-  font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
-  line-height: 18px;
-  font-size: 13px;
+  line-height: 1.125rem;
+  font-size: 0.812rem;
 }
 
 .about__quote {
   font-weight: 500;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 0.875rem;
+  line-height: 1.37rem;
 }
 
 .navbar__item {
-  font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 0.812rem;
+  line-height: 1.125rem;
 }
 
 @media (min-width: 768px) {
   h1 {
     font-weight: 700;
-    font-size: 60px;
-    line-height: 68px;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
   }
   h2 {
     font-weight: 700;
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
   }
   h3 {
     font-weight: 500;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
   p {
     font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.875rem;
+    line-height: 1.37rem;
   }
   .about__quote {
     font-weight: 600;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
   .footer__title {
-    font-family: "Nunito Sans", sans-serif;
     font-weight: 700;
-    line-height: 20px;
-    font-size: 14px;
+    line-height: 1.25rem;
+    font-size: 0.875rem;
   }
   .footer__copy {
-    font-family: "Nunito Sans", sans-serif;
     font-weight: 400;
-    line-height: 20px;
-    font-size: 14px;
+    line-height: 1.25rem;
+    font-size: 0.875rem;
   }
 }
 * {
@@ -127,6 +117,7 @@ p {
 
 body {
   color: #323232;
+  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
 }
 
 .navbar {
@@ -177,6 +168,12 @@ body {
   width: 50vw;
   padding: 1em;
 }
+.navbar__item--active {
+  border-bottom: 1px solid #FFF;
+}
+.navbar__item--inactive {
+  color: #E1E1E1;
+}
 @media screen and (min-width: 768px) {
   .navbar__item {
     justify-content: center;
@@ -188,14 +185,6 @@ body {
   .navbar__item:hover {
     background-color: #000;
   }
-}
-
-.navbar__item--active {
-  border-bottom: 1px solid #FFF;
-}
-
-.navbar__item--inactive {
-  color: #E1E1E1;
 }
 
 /* Footer */
@@ -300,17 +289,16 @@ footer {
   margin-top: 1em;
 }
 
-.footer-logo--mobile {
+.footer-logo {
   display: block;
   width: 30%;
   padding-bottom: 1em;
 }
 @media screen and (min-width: 768px) {
-  .footer-logo--mobile {
+  .footer-logo {
     display: none;
   }
 }
-
 .footer-logo--desktop {
   display: none;
 }
