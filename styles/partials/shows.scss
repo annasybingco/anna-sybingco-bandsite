@@ -41,3 +41,11 @@
         width: 50%;
     }
 }
+
+.show-info {
+    display: flex;
+justify-content: space-around;
+align-items: end;
+padding: 1em 0;
+border-bottom: 2px solid black;
+}
