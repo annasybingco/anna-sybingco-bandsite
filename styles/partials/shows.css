@@ -343,10 +343,32 @@ footer {
   width: 50%;
 }
 
-.show-info {
+.show-list {
+  list-style: none;
   display: flex;
-  justify-content: space-around;
-  align-items: end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  padding: 2em 0;
+}
+
+.shows__item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
   padding: 1em 0;
-  border-bottom: 2px solid black;
+}
+
+.shows__button {
+  all: unset;
+  display: inline-block;
+  cursor: pointer; /* Makes it clear it's clickable */
+  text-align: center;
+  background-color: black;
+  color: white;
+  width: 150px;
+  height: 30px;
 }/*# sourceMappingURL=shows.css.map */

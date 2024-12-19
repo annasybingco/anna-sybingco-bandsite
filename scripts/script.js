@@ -1,43 +1,71 @@
-// JavaScript
-function addShowInfo(date, venue, location) {
-    // Select the container where shows will be appended
-    const allShowsContainer = document.querySelector('.all-shows');
 
-    // Create the parent container for this show
-    const showInfo = document.createElement('div');
-    showInfo.classList.add('show-info');
+// example array to work with for demo
+const shows = [
+  {
+    date:"Mon Sept 09 2024",
+    venue: "Ronald Lane",
+    location: "San Francisco",
+    button: "Buy Tickets",
+  },
+  {
+    date:"Tue Sept 17 2024",
+    venue: "Pier 3 East", 
+    location: "San Francisco",
+    button: "Buy Tickets",
+  },
+  {
+    date:"Sat Oct 12 2024",
+    venue: "View Lounge", 
+    location: "San Francisco",
+    button: "Buy Tickets",
+  },
+  {
+    date:"Sat Nov 16 2024",
+    venue: "Hyatt Agency", 
+    location: "San Francisco",
+    button: "Buy Tickets",
+  },
+  {
+    date:"Fri Nov 29 2024",
+    venue: "Moscow Center", 
+    location: "San Francisco",
+    button: "Buy Tickets",
+  },
+  {
+    date:"Wed Dec 18 2024",
+    venue: "Press Club", 
+    location: "San Francisco",
+    button: "Buy Tickets",
+  },
 
-    // Create the date element
-    const showDate = document.createElement('div');
-    showDate.classList.add('show__date');
-    showDate.innerHTML = `<p>date</p><p>${date}</p>`;
+];
 
-    // Create the venue element
-    const showVenue = document.createElement('div');
-    showVenue.classList.add('show__venue');
-    showVenue.innerHTML = `<p>venue</p><p>${venue}</p>`;
+const showList = document.querySelector(".show-list");
 
-    // Create the location element
-    const showLocation = document.createElement('div');
-    showLocation.classList.add('show__location');
-    showLocation.innerHTML = `<p>location</p><p>${location}</p>`;
+shows.forEach((product) => {
+  const showItem = document.createElement("li");
+  showItem.classList.add("shows__item");
 
-    // Create the button element
-    const buttonContainer = document.createElement('div');
-    const button = document.createElement('button');
-    button.textContent = 'Buy Tickets';
-    buttonContainer.appendChild(button);
+  const showDate = document.createElement("li");
+  showDate.classList.add("shows__items");
+  showDate.innerText = product.date;
 
-    // Append all elements to the show-info container
-    showInfo.appendChild(showDate);
-    showInfo.appendChild(showVenue);
-    showInfo.appendChild(showLocation);
-    showInfo.appendChild(buttonContainer);
 
-    // Append show-info to the all-shows container
-    allShowsContainer.appendChild(showInfo);
-  }
+  const showVenue = document.createElement("li");
+  showVenue.classList.add("shows__items");
+  showVenue.innerText = product.venue;
 
-  // Adding multiple shows dynamically
-  addShowInfo('Mon Sept 09 2024', 'Ronald Lane', 'San Francisco, CA');
-  addShowInfo('Tue Sept 10 2024', 'Madison Square', 'New York, NY');
+  const showLocation = document.createElement("li");
+ showLocation.classList.add("shows__items");
+  showLocation.innerText = product.location;
+
+  const showsButton = document.createElement("button");
+  showsButton.classList.add("shows__button");
+  showsButton.innerText = product.button;
+
+  showItem.appendChild(showDate); // append description to productItem <li>
+  showItem.appendChild(showVenue); // append date to productItem <li>
+  showItem.appendChild(showLocation); // append price to productItem <li>
+  showItem.appendChild(showsButton); //append button to productItem 
+  showList.appendChild(showItem); // append everything to the <ul class="product-list">
+});
