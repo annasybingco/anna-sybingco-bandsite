@@ -187,6 +187,15 @@ body {
   }
 }
 
+.button {
+  background-color: #323232;
+  color: #FFF;
+  height: 40px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  width: 150px;
+}
+
 /* Footer */
 footer {
   background-color: #323232;

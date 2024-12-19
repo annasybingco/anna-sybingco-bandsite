@@ -83,6 +83,14 @@ body {
 }
 }
 
+.button {
+    background-color: $primary-color;
+    color: $tertiary-color;
+    height: 40px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    width: 150px;
+}
 /* Footer */
 footer {
     background-color: $primary-color;

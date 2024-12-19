@@ -180,6 +180,14 @@ a {
     padding-bottom: 1em;
 }
 
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+}
+
 .comment {
     display: flex;
     flex-direction: column;
@@ -188,7 +196,7 @@ a {
     list-style-type: none;
 
     &__text {
-        width: 50vw;;
+        width: 50vw;
         border-bottom: 1px solid #ccc; 
         padding: 1em 0;
     }

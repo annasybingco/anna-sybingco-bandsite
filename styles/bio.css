@@ -187,6 +187,15 @@ body {
   }
 }
 
+.button {
+  background-color: #323232;
+  color: #FFF;
+  height: 40px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  width: 150px;
+}
+
 /* Footer */
 footer {
   background-color: #323232;
@@ -486,6 +495,14 @@ a {
 
 .gallery h2 {
   padding-bottom: 1em;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
 }
 
 .comment {

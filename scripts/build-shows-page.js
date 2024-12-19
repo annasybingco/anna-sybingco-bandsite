@@ -40,25 +40,25 @@ const shows = [
   
   const showList = document.querySelector(".show-list");
   
-  shows.forEach((product) => { //rename
+  shows.forEach((show) => { //rename
     const showItem = document.createElement("li");
     showItem.classList.add("shows__item");
   
     const showDate = document.createElement("li");
     showDate.classList.add("shows__items");
-    showDate.innerText = product.date;
+    showDate.innerText = show.date;
   
     const showVenue = document.createElement("li");
     showVenue.classList.add("shows__items");
-    showVenue.innerText = product.venue;
+    showVenue.innerText = show.venue;
   
     const showLocation = document.createElement("li");
    showLocation.classList.add("shows__items");
-    showLocation.innerText = product.location;
+    showLocation.innerText = show.location;
   
     const showsButton = document.createElement("button");
     showsButton.classList.add("shows__button");
-    showsButton.innerText = product.button;
+    showsButton.innerText = show.button;
   
     showItem.appendChild(showDate); 
     showItem.appendChild(showVenue); 
