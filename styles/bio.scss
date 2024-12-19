@@ -179,3 +179,23 @@ a {
 .gallery h2 {
     padding-bottom: 1em;
 }
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+
+    &__text {
+        width: 50vw;;
+        border-bottom: 1px solid #ccc; 
+        padding: 1em 0;
+    }
+}
+
+.comments__info {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+}
