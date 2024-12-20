@@ -497,12 +497,29 @@ a {
   padding-bottom: 1em;
 }
 
+label {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  color: #AFAFAF;
+}
+
 .input {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50vw;
+}
+.input__image {
+  background: url(/assets/images/Mohan-muruge.jpg);
+  background-size: cover;
+  width: 3.12em;
+  height: 3.12em;
+  border-radius: 50%;
+}
+.input__whole {
+  display: flex;
 }
 
 .comment {

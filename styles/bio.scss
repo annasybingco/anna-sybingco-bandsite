@@ -180,12 +180,31 @@ a {
     padding-bottom: 1em;
 }
 
+label {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    color: $secondary-color;
+}
+
 .input {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50vw;
+
+    &__image {
+        background: url(/assets/images/Mohan-muruge.jpg);
+        background-size: cover;
+            width: 3.12em;
+            height: 3.12em;
+            border-radius: 50%;
+    }
+
+    &__whole {
+        display: flex;
+    }
 }
 
 .comment {

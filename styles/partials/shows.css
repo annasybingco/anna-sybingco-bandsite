@@ -353,31 +353,37 @@ footer {
 }
 
 .show-list {
-  list-style: none;
+  padding: 3em;
+}
+
+.shows-all {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2em;
-  padding: 2em 0;
-}
-
-.shows__item {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1em;
-  align-items: center;
   border-bottom: 1px solid #ccc;
-  padding: 1em 0;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.shows__button {
-  all: unset;
-  display: inline-block;
-  cursor: pointer; /* Makes it clear it's clickable */
-  text-align: center;
-  background-color: black;
-  color: white;
-  width: 150px;
-  height: 30px;
-}/*# sourceMappingURL=shows.css.map */
+.show__item {
+  min-width: 25%;
+  padding: 1em;
+}
+
+.show__item2 {
+  min-width: 25%;
+}
+
+.show__item3 {
+  min-width: 25%;
+}
+
+li {
+  list-style-type: none;
+}
+
+/*  .shows__item {
+   display: flex;
+ gap: 1em; 
+ align-items: center; 
+ border-bottom: 1px solid #ccc; 
+ padding: 1em 0;
+ } *//*# sourceMappingURL=shows.css.map */

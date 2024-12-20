@@ -42,32 +42,39 @@
     }
 }
 
-.show-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
-    padding: 2em 0;
-  }
+.show-list{
+    padding: 3em;
+}
 
-  .shows__item {
-    display: grid;
-  grid-template-columns: repeat(4, 1fr); 
+.shows-all {
+    display: flex;
+    border-bottom: 1px solid #ccc; 
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.show__item{
+    min-width: 25%;
+    padding: 1em;
+}
+
+.show__item2{
+    min-width: 25%;
+}
+
+.show__item3{
+    min-width: 25%;
+}
+
+li {
+    list-style-type: none;
+}
+
+ /*  .shows__item {
+    display: flex;
   gap: 1em; 
   align-items: center; 
   border-bottom: 1px solid #ccc; 
   padding: 1em 0;
-  }
+  } */
 
-  .shows__button {
-    all: unset;
-    display: inline-block;
-    cursor: pointer; /* Makes it clear it's clickable */
-    text-align: center;
-    background-color: black;
-    color: white;
-    width: 150px;
-    height: 30px;
-  }
