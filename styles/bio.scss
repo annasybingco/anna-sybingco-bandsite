@@ -180,6 +180,8 @@ a {
     padding-bottom: 1em;
 }
 
+
+
 label {
     display: flex;
     flex-direction: column;
@@ -187,25 +189,54 @@ label {
     color: $secondary-color;
 }
 
-.input {
+.form {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form__fields {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-
-    &__image {
-        background: url(/assets/images/Mohan-muruge.jpg);
-        background-size: cover;
-            width: 3.12em;
-            height: 3.12em;
-            border-radius: 50%;
-    }
-
-    &__whole {
-        display: flex;
-    }
-}
+    align-items: flex-end;
+  }
+  
+  .form__avatar-container {
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+  }
+  
+  .form__avatar {
+    background-image: url(../assets/images/Mohan-muruge.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; 
+  }
+  
+  .form__comment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .form__input {
+    width: 500px;
+  }
+  
+  .form__field {
+    width: 100%;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form__field--textarea {
+    resize: none;
+  }
 
 .comment {
     display: flex;
