@@ -66,33 +66,27 @@
 
 <!-- form section -->
 
-<section>
-    <h3>Join the conversation</h3>
-    <div class="form">
-   <div class="form__fields">
-     <form>
-   
-       <!-- Avatar and Name container -->
-       <div class="form__avatar-container">
-         <div class="form__avatar"></div>
-         <div class="form__input">
-           <label for="fname">Name</label>
-           <input type="text" id="fname" class="form__field" name="name" placeholder="Enter your name">
-         </div>
-       </div>
-   
-       <!-- Remaining fields -->
-       <div class="form__comment">
-         <div class="form__input">
-           <label for="comment">Comment</label>
-           <textarea id="comment" class="form__field form__field--textarea" name="comment" placeholder="Add a new comment"></textarea>
-         </div>
-         <button class="button">Submit</button>
-       </div>
-     </form>
-   </div>
-   </div>
-   </section>
+
+<section class="join-the-conversation">
+ <h2>Join the conversation</h2>
+ <div class="form-action">
+  <div class="avatar-centered">
+ <div class="form__avatar"></div>
+</div>
+ <form class="form__fields">
+
+    <div class="form__input">
+      <label for="fname">Name</label>
+      <input type="text" id="fname" class="form__field" name="commentName" placeholder="Enter your name">
+    </div>
+    <div class="form__input">
+      <label for="comment">Comment</label>
+      <textarea id="comment" class="form__field form__field--textarea" name="commentText" placeholder="Add a new comment"></textarea>
+    </div>
+    <button class="button">Submit</button>
+</form>
+</div>
+</section>
    
 
 <!-- comment section -->
