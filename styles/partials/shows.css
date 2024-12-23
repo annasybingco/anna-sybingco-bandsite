@@ -42,6 +42,12 @@ p {
   line-height: 1.125rem;
 }
 
+button {
+  font-weight: 700;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+}
+
 .about__copy {
   font-weight: 500;
   font-size: 0.812rem;
@@ -92,6 +98,11 @@ p {
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.37rem;
+  }
+  button {
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
   }
   .about__quote {
     font-weight: 600;
@@ -193,7 +204,12 @@ body {
   height: 40px;
   border-radius: 4px;
   text-transform: uppercase;
-  width: 150px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .button {
+    width: 150px;
+  }
 }
 
 /* Footer */
@@ -358,7 +374,13 @@ ul {
 
 .show-list {
   display: flex;
-  padding: 0;
+  flex-direction: column;
+  padding: 1em;
+}
+@media screen and (min-width: 768px) {
+  .show-list {
+    flex-direction: row;
+  }
 }
 
 .shows__table {
@@ -371,12 +393,20 @@ ul {
 }
 
 .shows__table-row {
-  background-color: lightpink;
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: flex-start;
-  border-bottom: 1px solid darkorange;
+  border-bottom: 1px solid #E1E1E1;
+  gap: 1em;
   padding: 1em 0;
+}
+@media screen and (min-width: 768px) {
+  .shows__table-row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .shows__table-section {
@@ -384,14 +414,23 @@ ul {
 }
 
 .shows__title {
-  color: darkolivegreen;
+  color: #AFAFAF;
   text-transform: uppercase;
 }
 
 .shows__title--hide {
-  display: none;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .shows__title--hide {
+    display: none;
+  }
 }
 
 .shows__table-section {
   min-width: 25%;
+}
+
+.shows__date1 {
+  font-weight: 700;
 }/*# sourceMappingURL=shows.css.map */

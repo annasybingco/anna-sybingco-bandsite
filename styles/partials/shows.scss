@@ -48,7 +48,12 @@ ul {
   
   .show-list {
     display: flex;
-    padding: 0;
+    flex-direction: column;
+    padding: 1em;
+
+    @include tablet {
+        flex-direction: row;
+    }
   }
   
   .shows__table {
@@ -62,12 +67,19 @@ ul {
   
   
   .shows__table-row {
-    background-color: lightpink;
     display: flex;
+    flex-direction: column;
     width: 100%;
     justify-content: flex-start;
-    border-bottom: 1px solid darkorange;
+    border-bottom: 1px solid $inactive-color;
+    gap: 1em;
     padding: 1em 0;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
   }
   
   .shows__table-section {
@@ -75,14 +87,22 @@ ul {
   }
   
   .shows__title {
-    color: darkolivegreen;
+    color: $secondary-color;
     text-transform: uppercase;
   }
   
   .shows__title--hide {
+    display: block;
+
+    @include tablet {
     display: none;
   }
+}
   
   .shows__table-section {
     min-width: 25%;
+  }
+
+  .shows__date1 {
+    font-weight: 700;
   }

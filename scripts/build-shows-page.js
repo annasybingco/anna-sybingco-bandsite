@@ -64,7 +64,7 @@ const showsHeading = document.createElement("ul");
 showsHeading.classList.add("shows__heading");
 
 //create the h2 element
-const showsTitle = document.createElement("li");
+const showsTitle = document.createElement("h2");
 showsTitle.innerText = "Shows";
 
 showsHeading.appendChild(showsTitle);
@@ -85,8 +85,13 @@ shows.forEach((show, index) => {
   showsTitle.innerText = show.dateTitle;
 
   const showsCopy = document.createElement("li");
-  showsCopy.classList.add("shows__copy");
-  showsCopy.innerText = new Date(show.date).toLocaleDateString();
+  showsCopy.classList.add("shows__copy", "shows__date1");
+  showsCopy.innerText = new Date(show.date).toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",   
+    day: "2-digit",  
+    year: "numeric"   
+  });
 
   const showsTableSection2 = document.createElement("ul");
   showsTableSection2.classList.add("shows__table-section");
