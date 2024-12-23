@@ -19,7 +19,7 @@ productForm.addEventListener("submit", (event) => {
   loopThroughandAppendComments();
 
 const latestCommentWrapper = commentListElement.firstChild;
-latestCommentWrapper.classList.add("full-width");
+latestCommentWrapper.classList.add("form__full-width");
 });
 
 //comment section
@@ -48,11 +48,11 @@ const comments = [
   comments.forEach((comment) => {
     // Create the wrapper container
     const wrapper = document.createElement("div");
-    wrapper.classList.add("wrapper");
+    wrapper.classList.add("form__wrapper");
 
     // Create the container for the image
     const commentAll = document.createElement("div");
-    commentAll.classList.add("comments__all");
+    commentAll.classList.add("comments");
 
     const commentImage = document.createElement("div");
     commentImage.classList.add("comments__image");

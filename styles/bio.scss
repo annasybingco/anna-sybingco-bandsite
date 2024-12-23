@@ -11,7 +11,7 @@ a {
 
 .hero {
     background: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
     url('/assets/images/hero-bio.jpg');
     background-size: cover;
     height: 40vh;
@@ -180,7 +180,7 @@ a {
     padding-bottom: 1em;
 }
 
-.join-the-conversation {
+.form__conversation {
     padding: 1em;
 
     @include tablet {
@@ -190,14 +190,7 @@ a {
     }
 }
 
-label {
-    display: flex;
-    flex-direction: column;
-    text-transform: uppercase;
-    color: $secondary-color;
-}
-
- .form-action {
+.form__all-fields {
     display: flex;
     width: 100%;
 
@@ -210,13 +203,13 @@ label {
         padding: 0 12em;
     }
  }
- 
- .avatar-centered {
+
+ .form__avatar-container {
     padding-top: 2em;
     padding-right: 1em;
  }
 
-  .form__avatar {
+ .form__avatar {
     background-image: url(../assets/images/Mohan-muruge.jpg);
     background-size: cover;
     background-position: center;
@@ -235,6 +228,13 @@ label {
 .form__input {
     width: 100%;
 }
+
+.form__label {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    color: $secondary-color;
+}
   .form__field {
     padding: 16px 20px;
     margin: 8px 0;
@@ -248,18 +248,13 @@ label {
     resize: none;
   }
 
-  .wrapper {
+  .form__wrapper {
     display: flex;
     width: 100%;
   }
 
-  .full-width {
+  .form__full-width {
     width: 100%;
-  }
-
-  .comments__all {
-    padding-top: 1em;
-    padding-right: 1em;
   }
 
 .comment {
@@ -285,21 +280,26 @@ label {
     }
 }
 
-.comments__info {
+.comments {
+    padding-top: 1em;
+    padding-right: 1em;
+   
+    &__info {
     display: flex;
     justify-content: space-between;
     padding-top: 1em;
-}
+    }   
 
-.comments__image {
+    &__image {
     background-color: $secondary-color;
     background-size: cover;
     background-position: center;
     width: 48px;
     height: 48px;
     border-radius: 50%; 
-}
+    }
 
-.comments__item {
+    &__item {
     width: 100%;
+}
 }

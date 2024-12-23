@@ -6,15 +6,28 @@
 
 .shows {
     background: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
     url('/assets/images/hero-shows.jpg');
     background-size: cover;
-    height: 60vh; //try aspect ratio 16/9 maybe try object fit cover
+    background-position: center;
+    aspect-ratio: 16/9; 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 1em;
+
+    @include tablet {
+      justify-content: flex-start;
+      padding: 2.25em;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 3.94em;
+
+    }
 
     &__subheading {
         color: $tertiary-color;
@@ -23,23 +36,18 @@
     &__text {
         color: $tertiary-color;
     }
+}
 
-    @include tablet {
-        height: 70vh;
-        padding: 2.25em;
-    }
+.shows__song{
+  padding-top: 3em;
+  width: 100%;
+}
 
-    @include desktop {
-        padding: 3.94em;
-    }
-
-    &__song {
-        width: 20%;
-    }
-
-    &__text {
-        width: 50%;
-    }
+.shows__copy{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
 }
 
 ul {
@@ -59,10 +67,6 @@ ul {
   .shows__table {
     width: 100%;
     padding: 0;
-  }
-  
-  .shows__heading {
-    background-color: lightblue;
   }
   
   
