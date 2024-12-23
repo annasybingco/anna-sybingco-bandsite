@@ -56,77 +56,94 @@ const shows = [
 
 ];
 
-
-// Select the parent container
+// Selecting the parent container
 const showList = document.querySelector(".show-list");
 
-// Create a new div for the title
-const titleDiv = document.createElement("div");
-titleDiv.classList.add("shows-title");
+//create a ul for the title
+const showsHeading = document.createElement("ul");
+showsHeading.classList.add("shows__heading");
 
-// Create the h3 element
-const titleElement = document.createElement("h3");
-titleElement.innerText = "Shows";
-titleElement.classList.add("shows-heading"); // Optional class for styling
+//create the h2 element
+const showsTitle = document.createElement("li");
+showsTitle.innerText = "Shows";
 
-// Append the h3 to the title div
-titleDiv.appendChild(titleElement);
+showsHeading.appendChild(showsTitle);
 
-// Add the title div to the top of the show list container
-showList.prepend(titleDiv);
+const showsTable = document.createElement("ul");
+showsTable.classList.add("shows__table");
 
 // Loop through the shows array and add show information
-shows.forEach((show) => { 
-  const showDiv = document.createElement("div");
-  showDiv.classList.add("shows-all");
+shows.forEach((show, index) => { 
+  const showsTableRow = document.createElement("ul");
+  showsTableRow.classList.add("shows__table-row");
+  
+  const showsTableSection = document.createElement("ul");
+  showsTableSection.classList.add("shows__table-section");
 
-  const showItem1 = document.createElement("li");
-  showItem1.classList.add("show__item");
+  const showsTitle = document.createElement("li");
+  showsTitle.classList.add("shows__title");
+  showsTitle.innerText = show.dateTitle;
 
-  const showDateTitle = document.createElement("p");
-  showDateTitle.classList.add("show__subtitle");
-  showDateTitle.innerText = show.dateTitle;
+  const showsCopy = document.createElement("li");
+  showsCopy.classList.add("shows__copy");
+  showsCopy.innerText = new Date(show.date).toLocaleDateString();
 
-  const showDate = document.createElement("p");
-  showDate.classList.add("show__text");
-  showDate.innerText = new Date(show.date).toLocaleDateString();
+  const showsTableSection2 = document.createElement("ul");
+  showsTableSection2.classList.add("shows__table-section");
 
-  const showItem2 = document.createElement("li");
-  showItem2.classList.add("show__item2");
+  const showsTitle2 = document.createElement("li");
+  showsTitle2.classList.add("shows__title");
+  showsTitle2.innerText = show.venueTitle;
 
-  const showVenueTitle = document.createElement("p");
-  showVenueTitle.classList.add("show__subtitle");
-  showVenueTitle.innerText = show.venueTitle;
+  const showsCopy2 = document.createElement("li");
+  showsCopy2.classList.add("shows__copy");
+  showsCopy2.innerText = show.venue;
 
-  const showVenue = document.createElement("p");
-  showVenue.classList.add("show__text");
-  showVenue.innerText = show.venue;
+  const showsTableSection3 = document.createElement("ul");
+  showsTableSection3.classList.add("shows__table-section");
 
-  const showItem3 = document.createElement("li");
-  showItem3.classList.add("show__item3");
+  const showsTitle3 = document.createElement("li");
+  showsTitle3.classList.add("shows__title");
+  showsTitle3.innerText = show.locationTitle;
 
-  const showLocationTitle = document.createElement("p");
-  showLocationTitle.classList.add("show__subtitle");
-  showLocationTitle.innerText = show.locationTitle;
-
-  const showLocation = document.createElement("p");
-  showLocation.classList.add("show__text");
-  showLocation.innerText = show.location;
+  const showsCopy3 = document.createElement("li");
+  showsCopy3.classList.add("shows__copy");
+  showsCopy3.innerText = show.location;
 
   const showsButton = document.createElement("button");
   showsButton.classList.add("button");
   showsButton.innerText = show.button;
 
-  showItem1.appendChild(showDateTitle);
-  showItem1.appendChild(showDate);
-  showItem2.appendChild(showVenueTitle);
-  showItem2.appendChild(showVenue);
-  showItem3.appendChild(showLocationTitle);
-  showItem3.appendChild(showLocation);
-  showDiv.appendChild(showItem1);
-  showDiv.appendChild(showItem2);
-  showDiv.appendChild(showItem3);
-  showDiv.appendChild(showsButton);
+  // Hide titles for rows other than the first
+  if (index !== 0) {
+      showsTitle.classList.add("shows__title--hide");
+      showsTitle2.classList.add("shows__title--hide");
+      showsTitle3.classList.add("shows__title--hide");
+  }
 
-  showList.appendChild(showDiv);
+  // Append date section
+  showsTableSection.appendChild(showsTitle);
+  showsTableSection.appendChild(showsCopy);
+
+  // Append venue section
+  showsTableSection2.appendChild(showsTitle2);
+  showsTableSection2.appendChild(showsCopy2);
+
+  // Append location section
+  showsTableSection3.appendChild(showsTitle3);
+  showsTableSection3.appendChild(showsCopy3);
+
+  // Append table sections to the row
+  showsTableRow.appendChild(showsTableSection);
+  showsTableRow.appendChild(showsTableSection2);
+  showsTableRow.appendChild(showsTableSection3);
+  showsTableRow.appendChild(showsButton);
+
+  // Append row to table
+  showsTable.appendChild(showsTableRow);
+
+  // Append uls to main
+  showList.appendChild(showsHeading);
+  showList.appendChild(showsTable);
 });
+
