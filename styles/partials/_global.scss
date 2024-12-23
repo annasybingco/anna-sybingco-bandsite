@@ -15,8 +15,7 @@ body {
 
 .navbar {
     background-color: $primary-color;
-
-&__logo {
+    &__logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,12 +32,9 @@ body {
 
     @include desktop {
         padding-left: 3.94em;
-        min-width: 1280px;
     }
 }
-
-
-&__list {
+    &__list {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -50,8 +46,7 @@ body {
         gap: 1em;
     }
 }
-
-&__item {
+    &__item {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,13 +81,18 @@ body {
 .button {
     background-color: $primary-color;
     color: $tertiary-color;
-    height: 40px;
+    height: 2.5em;
     border-radius: 4px;
     text-transform: uppercase;
     width: 100%;
 
     @include tablet {
-        width: 150px;
+        width: 9.4em;
+        padding: 0 2em;
+    }
+
+    &:hover{
+        background-color: $cta-hover;
     }
 }
 /* Footer */
@@ -190,6 +190,7 @@ footer {
     flex-direction: column;
     margin-top: 1em;
 }
+
 .footer-logo {
     display: block;
     width: 30%;
