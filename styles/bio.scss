@@ -248,6 +248,20 @@ label {
     resize: none;
   }
 
+  .wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .comments__all {
+    padding-top: 1em;
+    padding-right: 1em;
+  }
+
 .comment {
     display: flex;
     flex-direction: column;
@@ -275,4 +289,17 @@ label {
     display: flex;
     justify-content: space-between;
     padding-top: 1em;
+}
+
+.comments__image {
+    background-color: $secondary-color;
+    background-size: cover;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; 
+}
+
+.comments__item {
+    width: 100%;
 }

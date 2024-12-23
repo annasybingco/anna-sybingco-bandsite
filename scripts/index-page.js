@@ -5,22 +5,22 @@ const productForm = document.querySelector(".form__fields");
 productForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  console.log(event.target.commentName);
-  console.log(event.target.commentText);
-
   const newComment = {
     name: event.target.commentName.value,
     text: event.target.commentText.value,
     date: Date.now(),
   };
 
-  console.log(newComment)
-
   comments.unshift(newComment);
 
-  loopThroughandAppendComments();
-});
+  event.target.commentName.value = "";
+  event.target.commentText.value = "";
 
+  loopThroughandAppendComments();
+
+const latestCommentWrapper = commentListElement.firstChild;
+latestCommentWrapper.classList.add("full-width");
+});
 
 //comment section
 
@@ -42,41 +42,63 @@ const comments = [
   },
  ]
  function loopThroughandAppendComments() {
+  // Clear the current comments
   commentListElement.innerText = "";
-  
- 
- const commentList = document. querySelector(".comment");
- comments.forEach((comment) => {
-  const commentItem = document.createElement("div");
-  commentItem.classList.add("comments__item");
 
-  const commentsInfo = document.createElement("div");
-  commentsInfo.classList.add("comments__info");
+  comments.forEach((comment) => {
+    // Create the wrapper container
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("wrapper");
 
-  const commentName = document.createElement("p");
-  commentName.classList.add("comment__name");
-  commentName.innerText = comment.name;
+    // Create the container for the image
+    const commentAll = document.createElement("div");
+    commentAll.classList.add("comments__all");
 
-  const commentDate = document.createElement("p");
-  commentDate.classList.add("comment__name");
-  commentDate.innerText = new Date(comment.date).toLocaleDateString("fr");
+    const commentImage = document.createElement("div");
+    commentImage.classList.add("comments__image");
 
-  const commentText = document.createElement("p");
-  commentText.classList.add("comment__text");
-  commentText.innerText = comment.text;
+    commentAll.appendChild(commentImage);
 
-  // Append name and date to the info container
-  commentsInfo.appendChild(commentName);
-  commentsInfo.appendChild(commentDate);
+    // Create the container for text info
+    const commentItem = document.createElement("div");
+    commentItem.classList.add("comments__item");
 
+    const commentsInfo = document.createElement("div");
+    commentsInfo.classList.add("comments__info");
 
-  // Append info container and text to the main item
-  commentItem.appendChild(commentsInfo);
-  commentItem.appendChild(commentText);
+    const commentName = document.createElement("p");
+    commentName.classList.add("comment__name");
+    commentName.innerText = comment.name;
 
-  // Append the item to the list
-  commentList.appendChild(commentItem);
-})
- }
+    const commentDate = document.createElement("p");
+    commentDate.classList.add("comment__date");
+    commentDate.innerText = new Date(comment.date).toLocaleDateString("en-US", {
+      weekday: "short",
+      month: "short",   
+      day: "2-digit",  
+      year: "numeric"   
+    });
+
+    const commentText = document.createElement("p");
+    commentText.classList.add("comment__text");
+    commentText.innerText = comment.text;
+
+    // Append name and date to the info container
+    commentsInfo.appendChild(commentName);
+    commentsInfo.appendChild(commentDate);
+
+    // Append info and text to the item container
+    commentItem.appendChild(commentsInfo);
+    commentItem.appendChild(commentText);
+
+    // Append the image and item to the wrapper
+    wrapper.appendChild(commentAll);
+    wrapper.appendChild(commentItem);
+
+    // Append the wrapper to the main comment list
+    commentListElement.appendChild(wrapper);
+
+  });
+}
 
  loopThroughandAppendComments();
