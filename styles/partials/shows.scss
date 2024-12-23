@@ -36,23 +36,19 @@
     &__text {
         color: $tertiary-color;
     }
-}
 
-.shows__song{
-  padding-top: 3em;
-  width: 100%;
-}
+    &__song{
+    padding-top: 3em;
+    width: 100%;
+    }
 
-.shows__copy{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 0;
-}
-
-ul {
-    list-style-type: none;
+    &__copy{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
   }
+}
   
   .show-list {
     display: flex;
@@ -60,7 +56,11 @@ ul {
     padding: 1em;
 
     @include tablet {
-        flex-direction: row;
+        padding: 2.25em;
+    }
+
+    @include desktop {
+      padding: 3.94em;
     }
   }
   
@@ -68,7 +68,6 @@ ul {
     width: 100%;
     padding: 0;
   }
-  
   
   .shows__table-row {
     display: flex;
@@ -78,15 +77,14 @@ ul {
     border-bottom: 1px solid $inactive-color;
     gap: 1em;
     padding: 1em 0;
-    background-color: #fff;
-
-    &:hover {
-        background-color: $background-color;
-    }
+    background-color: $tertiary-color;
 
     &--selected {
         background-color: $inactive-color;
-        // Add any additional selected styles here
+    }
+
+    &:hover {
+      background-color: $background-color;
     }
 
     @include tablet {
@@ -94,29 +92,25 @@ ul {
         justify-content: center;
         align-items: center;
     }
-}
-  
-  .shows__table-section {
-    min-width: 30%;
   }
-  
+ 
   .shows__title {
     color: $secondary-color;
     text-transform: uppercase;
-  }
-  
-  .shows__title--hide {
-    display: block;
+ 
+      &--hide {
+      display: block;
 
-    @include tablet {
-    display: none;
-  }
-}
+      @include tablet {
+      display: none;
+      }
+    }
+  }  
   
-  .shows__table-section {
+.shows__table-section {
     min-width: 25%;
   }
 
-  .shows__date1 {
+  .shows__date-bold {
     font-weight: 700;
   }

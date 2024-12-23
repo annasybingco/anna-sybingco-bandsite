@@ -85,7 +85,7 @@ shows.forEach((show, index) => {
   showsTitle.innerText = show.dateTitle;
 
   const showsCopy = document.createElement("li");
-  showsCopy.classList.add("shows__copy", "shows__date1");
+  showsCopy.classList.add("shows__copy", "shows__date-bold");
   showsCopy.innerText = new Date(show.date).toLocaleDateString("en-US", {
     weekday: "short",
     month: "short",   
@@ -152,12 +152,3 @@ shows.forEach((show, index) => {
   showList.appendChild(showsTable);
 });
 
-showsTableRow.addEventListener("click", () => {
-  // Remove 'selected' class from all rows
-  document.querySelectorAll(".shows__table-row").forEach((row) => {
-      row.classList.remove("shows__table-row--selected");
-  });
-
-  // Add 'selected' class to the clicked row
-  showsTableRow.classList.add("shows__table-row--selected");
-});

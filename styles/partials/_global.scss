@@ -13,6 +13,10 @@ body {
     font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
 }
 
+ul {
+    list-style-type: none;
+  }
+
 .navbar {
     background-color: $primary-color;
     &__logo {
@@ -85,9 +89,9 @@ body {
     border-radius: 4px;
     text-transform: uppercase;
     width: 100%;
+    text-wrap: nowrap;
 
     @include tablet {
-        width: 9.4em;
         padding: 0 2em;
     }
 

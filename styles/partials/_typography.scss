@@ -37,7 +37,7 @@ h3 {
     line-height: 1.37rem;
 }
 
-p {
+p, .form__field {
     font-weight: 400;
     font-size: .812rem;
     line-height: 1.125rem;
@@ -72,13 +72,11 @@ button, .label {
         line-height: 1.37rem;
     }
 
-
 .navbar__item { 
     font-weight: 400;
     font-size: .812rem;
     line-height: 1.125rem;
 }
-
 
 @media (min-width: 768px){
 h1 {
@@ -128,5 +126,4 @@ button {
     line-height: 1.25rem;
     font-size: .875rem;
 }
-
 }
