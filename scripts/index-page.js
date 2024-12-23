@@ -42,15 +42,12 @@ const comments = [
   },
  ]
  function loopThroughandAppendComments() {
-  // Clear the current comments
   commentListElement.innerText = "";
 
   comments.forEach((comment) => {
-    // Create the wrapper container
     const wrapper = document.createElement("div");
     wrapper.classList.add("form__wrapper");
 
-    // Create the container for the image
     const commentAll = document.createElement("div");
     commentAll.classList.add("comments");
 
@@ -59,7 +56,6 @@ const comments = [
 
     commentAll.appendChild(commentImage);
 
-    // Create the container for text info
     const commentItem = document.createElement("div");
     commentItem.classList.add("comments__item");
 

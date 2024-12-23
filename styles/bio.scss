@@ -210,8 +210,8 @@ a {
     background-image: url(../assets/images/Mohan-muruge.jpg);
     background-size: cover;
     background-position: center;
-    width: 48px;
-    height: 48px;
+    width: 3em;
+    height: 3em;
     border-radius: 50%; 
   }
   
@@ -234,8 +234,8 @@ a {
     padding-bottom: 0.25em;
 }
   .form__field {
-    padding: 12px;
-    margin: 8px 0;
+    padding: 0.75em;
+    margin: 0.5em 0;
     border: 1px solid $inactive-color;
     border-radius: 4px;
     box-sizing: border-box;
@@ -244,13 +244,13 @@ a {
 
     @include tablet{
         height: 3em;
-        padding: 16px;
+        padding: 1em;
     }
   }
   
   .form__field--textarea {
     resize: none;
-    padding: 8px;
+    padding: 0.5em;
   }
 
   .form__wrapper {
@@ -271,7 +271,7 @@ a {
     padding: 1em;
 
     &__text {
-        border-bottom: 1px solid #ccc; 
+        border-bottom: 1px solid $inactive-color; 
         padding: 1em 0;
     }
  
@@ -299,8 +299,8 @@ a {
     background-color: $secondary-color;
     background-size: cover;
     background-position: center;
-    width: 48px;
-    height: 48px;
+    width: 3em;
+    height: 3em;
     border-radius: 50%; 
     }
 
