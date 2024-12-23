@@ -74,13 +74,23 @@ ul {
     border-bottom: 1px solid $inactive-color;
     gap: 1em;
     padding: 1em 0;
+    background-color: #fff;
+
+    &:hover {
+        background-color: $background-color;
+    }
+
+    &--selected {
+        background-color: $inactive-color;
+        // Add any additional selected styles here
+    }
 
     @include tablet {
         flex-direction: row;
         justify-content: center;
         align-items: center;
     }
-  }
+}
   
   .shows__table-section {
     min-width: 30%;

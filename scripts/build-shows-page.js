@@ -81,7 +81,7 @@ shows.forEach((show, index) => {
   showsTableSection.classList.add("shows__table-section");
 
   const showsTitle = document.createElement("li");
-  showsTitle.classList.add("shows__title");
+  showsTitle.classList.add("shows__title", "label");
   showsTitle.innerText = show.dateTitle;
 
   const showsCopy = document.createElement("li");
@@ -97,7 +97,7 @@ shows.forEach((show, index) => {
   showsTableSection2.classList.add("shows__table-section");
 
   const showsTitle2 = document.createElement("li");
-  showsTitle2.classList.add("shows__title");
+  showsTitle2.classList.add("shows__title", "label");
   showsTitle2.innerText = show.venueTitle;
 
   const showsCopy2 = document.createElement("li");
@@ -108,7 +108,7 @@ shows.forEach((show, index) => {
   showsTableSection3.classList.add("shows__table-section");
 
   const showsTitle3 = document.createElement("li");
-  showsTitle3.classList.add("shows__title");
+  showsTitle3.classList.add("shows__title", "label");
   showsTitle3.innerText = show.locationTitle;
 
   const showsCopy3 = document.createElement("li");
@@ -152,3 +152,12 @@ shows.forEach((show, index) => {
   showList.appendChild(showsTable);
 });
 
+showsTableRow.addEventListener("click", () => {
+  // Remove 'selected' class from all rows
+  document.querySelectorAll(".shows__table-row").forEach((row) => {
+      row.classList.remove("shows__table-row--selected");
+  });
+
+  // Add 'selected' class to the clicked row
+  showsTableRow.classList.add("shows__table-row--selected");
+});

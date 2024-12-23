@@ -42,7 +42,7 @@ p {
   line-height: 1.125rem;
 }
 
-button {
+button, .label {
   font-weight: 700;
   font-size: 0.625rem;
   line-height: 1.25rem;
@@ -400,6 +400,13 @@ ul {
   border-bottom: 1px solid #E1E1E1;
   gap: 1em;
   padding: 1em 0;
+  background-color: #fff;
+}
+.shows__table-row:hover {
+  background-color: #FAFAFA;
+}
+.shows__table-row--selected {
+  background-color: #E1E1E1;
 }
 @media screen and (min-width: 768px) {
   .shows__table-row {
