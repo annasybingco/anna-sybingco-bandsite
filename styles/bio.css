@@ -134,6 +134,10 @@ ul {
   list-style-type: none;
 }
 
+textarea {
+  font-family: inherit;
+}
+
 .navbar {
   background-color: #323232;
 }

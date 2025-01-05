@@ -79,10 +79,6 @@
     padding: 1em 0;
     background-color: $tertiary-color;
 
-    &--selected {
-        background-color: $inactive-color;
-    }
-
     &:hover {
       background-color: $background-color;
     }
@@ -114,3 +110,4 @@
 .shows__date-bold {
     font-weight: 700;
 }
+

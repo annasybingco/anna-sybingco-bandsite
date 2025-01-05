@@ -17,6 +17,10 @@ ul {
     list-style-type: none;
   }
 
+textarea {
+    font-family: inherit;
+}
+
 .navbar {
     background-color: $primary-color;
     &__logo {

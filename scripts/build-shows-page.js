@@ -147,8 +147,20 @@ shows.forEach((show, index) => {
   // Append row to table
   showsTable.appendChild(showsTableRow);
 
+    // Add click event listener to the row for highlighting
+    showsTableRow.addEventListener("click", () => {
+      // Remove highlight from all rows
+      document.querySelectorAll(".shows__table-row").forEach(row => {
+        row.style.backgroundColor = ""; // Reset background
+      });
+  
+      // Highlight the clicked row
+      showsTableRow.style.backgroundColor = "black";
+    });
+
   // Append uls to main
   showList.appendChild(showsHeading);
   showList.appendChild(showsTable);
 });
+
 
