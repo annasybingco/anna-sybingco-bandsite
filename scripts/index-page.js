@@ -91,7 +91,7 @@ latestCommentWrapper.classList.add("form__full-width");
 
 //  loopThroughandAppendComments();
 
-function createCommentSection(comments) {
+function createCommentSection(comment) {
   const commentAll = document.createElement("div");
   const commentFilled = document.createElement("div");
   const commentImage = document.createElement("img");
@@ -114,12 +114,22 @@ function createCommentSection(comments) {
   commentImage.classList.add("comments__image")
   commentTitle.classList.add("comments__title");
 
-  commentName.innerText = comments.name;
-  const convertedDate = new Date(comments.postedDate).toLocaleDateString();
+  commentName.innerText = comment.name;
+  const convertedDate = new Date(comment.postedDate).toLocaleDateString();
 
   commentDate.innerText = convertedDate;
-  commentCopy.innerText = comments.comment;
+  commentCopy.innerText = comment.comment;
 
   return commentAll;
 }
-console.log(commentAll)
+const BandSiteApi = new BandsiteApi("myApiKey");
+async function renderAllCommments() {
+  commentListElement.innerHTML = "";
+
+  const comments = await BandSiteApi.getComments();
+
+  comments.forEach((comment) => {
+    const commentToAdd = createCommentSection(comment);
+    commentListElement.appendChild(commentToAdd)
+  });
+}
