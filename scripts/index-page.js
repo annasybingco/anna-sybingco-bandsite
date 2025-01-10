@@ -108,28 +108,60 @@ function createCommentSection(comment) {
   commentFilled.appendChild(commentImage);
   commentFilled.appendChild(commentText);
   commentAll.appendChild(commentFilled);
-
+ 
   commentAll.classList.add("comments");
   commentFilled.classList.add("comments__filled");
   commentImage.classList.add("comments__image")
   commentTitle.classList.add("comments__title");
 
   commentName.innerText = comment.name;
-  const convertedDate = new Date(comment.postedDate).toLocaleDateString();
+  const convertedDate = new Date(comment.timestamp).toLocaleDateString();
 
   commentDate.innerText = convertedDate;
   commentCopy.innerText = comment.comment;
 
   return commentAll;
 }
-const BandSiteApi = new BandsiteApi("myApiKey");
-async function renderAllCommments() {
-  commentListElement.innerHTML = "";
-
-  const comments = await BandSiteApi.getComments();
-
+const bandSiteApi = new BandSiteApi("ac2bf06c-5b5f-4ccb-9b1c-5d24a455bc33");
+  
+async function renderAllComments() {
+  const commentList = document.querySelector(".comments-list")
+  commentList.innerHTML = "";
+ 
+  const comments = await bandSiteApi.getComments(); //where do we define .getRecipes defined in receipe api
+  console.log(comments)
   comments.forEach((comment) => {
-    const commentToAdd = createCommentSection(comment);
-    commentListElement.appendChild(commentToAdd)
+  //    console.log(recipe);
+      const commentToAdd = createCommentSection(comment);
+      commentList.appendChild(commentToAdd);
   });
 }
+
+renderAllComments();
+
+  //const comments = await bandSiteApi.getComments();
+
+
+  // comments.forEach((comment) => {
+  //   const commentToAdd = createCommentSection(comment);
+  //   commentListElement.appendChild(commentToAdd)
+  // });
+
+
+// try {
+//  await bandSiteApi.getComments()
+// } catch {
+  
+// }
+
+
+  // try {
+  //   const comments = await bandSiteApi.getComments();
+  //   comments.forEach(comment => {
+  //     const commentToAdd = createCommentSection(comment);
+  //     commentListElement.appendChild(commentToAdd);
+  //   }); 
+  // } catch (error) { 
+  //   console.error("error");
+
+  // }};
