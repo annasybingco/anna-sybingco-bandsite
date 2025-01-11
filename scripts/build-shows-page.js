@@ -1,7 +1,3 @@
-// make a new class and pass in key + async functions like bio page to call and await
-
-//sprint 3
-
 function createShowdates(showDate) {
   const showdate = document.createElement("ul")
   const showdateDate = document.createElement("ul");
@@ -32,11 +28,16 @@ function createShowdates(showDate) {
   showdateDate.classList.add("showdate_date");
   showdateVenue.classList.add("showdate__venue");
   showdateLocation.classList.add("showdate__location");
+  showdateButton.classList.add("button")
  
+  showdateDateTitle.innerText = "Date";
   const convertedDate = new Date(showDate.date).toLocaleDateString();
   showdateDateCopy.innerText = convertedDate;
+  showdateVenueTitle.innerText = "Venue"
   showdateVenueCopy.innerText = showDate.place;
+  showdateLocationTitle.innerText = "Location"
   showdateLocationCopy.innerText = showDate.location;
+  showdateButton.innerText = "Buy Tickets"
 
   return showdate;
 }
