@@ -28,7 +28,7 @@ class BandSiteApi {
 
     async getShowdates() {
         try {
-            const getShowdatesResponse = await axios.post (
+            const getShowdatesResponse = await axios.get (
                 `${this.baseUrl}showdates?api_key=${this.apiKey}`,
             );
             return getShowdatesResponse.data;
@@ -36,7 +36,6 @@ class BandSiteApi {
             console.error("An error has occurred: " + error);
         }
     }
-
 }
 
 
