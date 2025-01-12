@@ -403,12 +403,34 @@ footer {
 .show-all {
   display: flex;
   width: 100%;
+  padding: 2em;
+}
+
+.show-title {
+  min-width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.showdate__header {
+  display: flex;
+  background-color: pink;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1em;
 }
 
 .showdate__section {
   display: flex;
   border-bottom: 1px solid grey;
   background-color: lightblue;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1em;
+}
+
+.showdate__hidden {
+  display: none;
 }
 
 .showdates {

@@ -26,8 +26,11 @@ function createShowdates(showDate) {
 
   showdate.classList.add("showdate__section");
   showdateDate.classList.add("showdate__date");
+  showdateDateTitle.classList.add("showdate__hidden")
   showdateVenue.classList.add("showdate__venue");
+  showdateVenueTitle.classList.add("showdate__hidden")
   showdateLocation.classList.add("showdate__location");
+  showdateLocationTitle.classList.add("showdate__hidden")
   showdateButton.classList.add("button")
  
   showdateDateTitle.innerText = "Date";
@@ -46,8 +49,29 @@ const bandSiteApi = new BandSiteApi("ac2bf06c-5b5f-4ccb-9b1c-5d24a455bc33");
 
 async function renderAllShowDates() {
   const showdates = document.querySelector(".showdates");
-  showdates.innerHTML = "";
+  showdates.innerHTML = ""; // Clear the container
 
+  // Create the top row with headers
+  const headerRow = document.createElement("ul");
+  headerRow.classList.add("showdate__header");
+  
+  const dateHeader = document.createElement("li");
+  dateHeader.innerText = "Date";
+  
+  const venueHeader = document.createElement("li");
+  venueHeader.innerText = "Venue";
+  
+  const locationHeader = document.createElement("li");
+  locationHeader.innerText = "Location";
+
+  headerRow.appendChild(dateHeader);
+  headerRow.appendChild(venueHeader);
+  headerRow.appendChild(locationHeader);
+  
+  // Append the header row to the container
+  showdates.appendChild(headerRow);
+
+  // Fetch and render the show dates
   const showdateAll = await bandSiteApi.getShowdates();
 
   showdateAll.forEach((showDate) => {
