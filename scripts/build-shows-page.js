@@ -25,7 +25,7 @@ function createShowdates(showDate) {
   showdate.appendChild(showdateSubmit);
 
   showdate.classList.add("showdate__section");
-  showdateDate.classList.add("showdate_date");
+  showdateDate.classList.add("showdate__date");
   showdateVenue.classList.add("showdate__venue");
   showdateLocation.classList.add("showdate__location");
   showdateButton.classList.add("button")

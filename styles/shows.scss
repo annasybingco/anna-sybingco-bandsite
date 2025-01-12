@@ -1,7 +1,7 @@
-@use "../partials/variables" as *;
-@use "../partials/mixins" as *;
-@use "../partials/typography" as *;
-@use "../partials/global" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+@use "./partials/global" as *;
 
 
 .shows {
@@ -64,53 +64,81 @@
     }
   }
   
-  .shows__table {
-    width: 100%;
-    padding: 0;
-  }
+//   .shows__table {
+//     width: 100%;
+//     padding: 0;
+//   }
   
-  .shows__table-row {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: flex-start;
-    border-bottom: 1px solid $inactive-color;
-    gap: 1em;
-    padding: 1em 0;
-    background-color: $tertiary-color;
+//   .shows__table-row {
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     justify-content: flex-start;
+//     border-bottom: 1px solid $inactive-color;
+//     gap: 1em;
+//     padding: 1em 0;
+//     background-color: $tertiary-color;
 
-    &:hover {
-      background-color: $background-color;
-    }
+//     &:hover {
+//       background-color: $background-color;
+//     }
 
-    @include tablet {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-  }
+//     @include tablet {
+//         flex-direction: row;
+//         justify-content: center;
+//         align-items: center;
+//     }
+//   }
  
-  .shows__title {
-    color: $secondary-color;
-    text-transform: uppercase;
+//   .shows__title {
+//     color: $secondary-color;
+//     text-transform: uppercase;
  
-      &--hide {
-      display: block;
+//       &--hide {
+//       display: block;
 
-      @include tablet {
-      display: none;
-      }
-    }
-  }  
+//       @include tablet {
+//       display: none;
+//       }
+//     }
+//   }  
   
-.shows__table-section {
-    min-width: 25%;
+// .shows__table-section {
+//     min-width: 25%;
+// }
+
+// .shows__date-bold {
+//     font-weight: 700;
+// }
+
+// .highlight {
+//   background-color: $inactive-color;
+// }
+
+.show-all {
+  display: flex;
+  width: 100%;
 }
 
-.shows__date-bold {
-    font-weight: 700;
+.showdate__section {
+  display: flex;
+  border-bottom: 1px solid grey;
+  background-color: lightblue;
 }
 
-.highlight {
-  background-color: $inactive-color;
+.showdates {
+  width: 100%;
 }
+
+.showdate__date {
+  min-width: 20%;
+}
+
+.showdate__venue {
+  min-width: 20%;
+}
+
+.showdate__location {
+  min-width: 20%;
+}
+
