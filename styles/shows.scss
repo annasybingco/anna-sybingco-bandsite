@@ -64,88 +64,63 @@
     }
   }
   
-//   .shows__table {
-//     width: 100%;
-//     padding: 0;
-//   }
-  
-//   .shows__table-row {
-//     display: flex;
-//     flex-direction: column;
-//     width: 100%;
-//     justify-content: flex-start;
-//     border-bottom: 1px solid $inactive-color;
-//     gap: 1em;
-//     padding: 1em 0;
-//     background-color: $tertiary-color;
-
-//     &:hover {
-//       background-color: $background-color;
-//     }
-
-//     @include tablet {
-//         flex-direction: row;
-//         justify-content: center;
-//         align-items: center;
-//     }
-//   }
- 
-//   .shows__title {
-//     color: $secondary-color;
-//     text-transform: uppercase;
- 
-//       &--hide {
-//       display: block;
-
-//       @include tablet {
-//       display: none;
-//       }
-//     }
-//   }  
-  
-// .shows__table-section {
-//     min-width: 25%;
-// }
-
-// .shows__date-bold {
-//     font-weight: 700;
-// }
-
-// .highlight {
-//   background-color: $inactive-color;
-// }
 
 .show-all {
   display: flex;
-  width: 100%;
-  padding: 2em;
+  flex-direction: column;
+  padding: 1em;
+
+   @include tablet {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 2em;
+   }
 }
 
 .show-title {
   min-width: 20%;
   display: flex;
-  justify-content: center;
 }
 
 .showdate__header {
+  display: none;
+
+  @include tablet {
   display: flex;
-  background-color: pink;
-  justify-content: space-evenly;
   align-items: center;
   padding: 1em;
+  color: $secondary-color;
+  width: 100%;
+  justify-content: space-around;
+}
 }
 
 .showdate__section {
   display: flex;
-  border-bottom: 1px solid grey;
-  background-color: lightblue;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-bottom: 1px solid $inactive-color;
+  gap: 1em;
+  padding: 1em 0em;
+
+  @include tablet {
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   padding: 1em;
 }
+}
 
 .showdate__hidden {
+ display: visible;
+ color: $secondary-color;
+ text-transform: uppercase;
+ gap: 1em;
+
+ @include tablet {
   display: none;
+}
 }
 
 .showdates {
@@ -154,13 +129,13 @@
 
 .showdate__date {
   min-width: 20%;
+
+ &__venue {
+  min-width: 20%;
+
 }
 
-.showdate__venue {
+&__location {
   min-width: 20%;
 }
-
-.showdate__location {
-  min-width: 20%;
 }
-

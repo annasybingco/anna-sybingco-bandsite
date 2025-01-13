@@ -93,6 +93,10 @@ textarea {
     border-radius: 4px;
     text-transform: uppercase;
     text-wrap: nowrap;
+    width: 100%;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
 
     @include tablet {
         padding: 0 2em;

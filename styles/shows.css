@@ -215,6 +215,10 @@ textarea {
   border-radius: 4px;
   text-transform: uppercase;
   text-wrap: nowrap;
+  width: 100%;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
 }
 @media screen and (min-width: 768px) {
   .button {
@@ -406,35 +410,64 @@ footer {
 
 .show-all {
   display: flex;
-  width: 100%;
-  padding: 2em;
+  flex-direction: column;
+  padding: 1em;
+}
+@media screen and (min-width: 768px) {
+  .show-all {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 2em;
+  }
 }
 
 .show-title {
   min-width: 20%;
   display: flex;
-  justify-content: center;
 }
 
 .showdate__header {
-  display: flex;
-  background-color: pink;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 1em;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .showdate__header {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    color: #AFAFAF;
+    width: 100%;
+    justify-content: space-around;
+  }
 }
 
 .showdate__section {
   display: flex;
-  border-bottom: 1px solid grey;
-  background-color: lightblue;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 1em;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-bottom: 1px solid #E1E1E1;
+  gap: 1em;
+  padding: 1em 0em;
+}
+@media screen and (min-width: 768px) {
+  .showdate__section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+  }
 }
 
 .showdate__hidden {
-  display: none;
+  display: visible;
+  color: #AFAFAF;
+  text-transform: uppercase;
+  gap: 1em;
+}
+@media screen and (min-width: 768px) {
+  .showdate__hidden {
+    display: none;
+  }
 }
 
 .showdates {
@@ -444,11 +477,9 @@ footer {
 .showdate__date {
   min-width: 20%;
 }
-
-.showdate__venue {
+.showdate__date__venue {
   min-width: 20%;
 }
-
-.showdate__location {
+.showdate__date__location {
   min-width: 20%;
 }/*# sourceMappingURL=shows.css.map */

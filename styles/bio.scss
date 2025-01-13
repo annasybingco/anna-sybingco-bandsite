@@ -275,8 +275,10 @@ a {
     padding: 1em;
 
     @include tablet {
-        width: 100vw;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         padding: 1em 2.25em;
     }
 
@@ -292,7 +294,6 @@ a {
 .form__title {
     margin-bottom: 1em;
     font-size: 1.5em;
-    text-align: center;
 }
 
 .form__container {
@@ -300,7 +301,7 @@ a {
     width: 100%;
 
     @include tablet {
-        padding: 0 7em;
+        max-width: 60%;
         margin-bottom: 1em;
     }
 
@@ -378,37 +379,46 @@ a {
     }
 }
 
-
+// COMMENT SPRINT 2
 .comments-list {
-    padding: 2em 12em;
-}
+    max-width: 100%;
 
-.comments__filled {
+    @include tablet {
     display: flex;
-    border-bottom: 1px solid black;
-    padding: 1em;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    }
 }
 
 .comments {
-    padding-top: 1em;
-    padding-right: 1em;  
+    padding: 1em;
+
+    @include tablet {
+        max-width: 80%;
+    }
+
+    &__filled {
+    display: flex;
+    border-bottom: 1px solid $inactive-color;
+    padding: 1em;
+    gap: 1em; 
+}
+    &__text {
+        width: 80%; 
+
+    @include tablet {
+            width: 90%;}
+    }
 
     &__image {
     background-color: $secondary-color;
-    background-size: cover;
-    background-position: center;
     width: 3em;
     height: 3em;
     border-radius: 50%; 
     }
-}
 
-.comments__title {
+    &__title {
     display: flex;
-    justify-content: space-between;
-}
-
-.comments__test {
-    width: 90%;
+    justify-content: space-between;  
+    }
 }

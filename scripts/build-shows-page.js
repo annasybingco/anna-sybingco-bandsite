@@ -34,7 +34,12 @@ function createShowdates(showDate) {
   showdateButton.classList.add("button")
  
   showdateDateTitle.innerText = "Date";
-  const convertedDate = new Date(showDate.date).toLocaleDateString();
+  const convertedDate = new Date(showDate.date).toLocaleDateString('en-US', {
+    weekday: 'short', 
+    month: 'short',   
+    day: '2-digit',  
+    year: 'numeric'  
+  });
   showdateDateCopy.innerText = convertedDate;
   showdateVenueTitle.innerText = "Venue"
   showdateVenueCopy.innerText = showDate.place;
@@ -49,20 +54,23 @@ const bandSiteApi = new BandSiteApi("ac2bf06c-5b5f-4ccb-9b1c-5d24a455bc33");
 
 async function renderAllShowDates() {
   const showdates = document.querySelector(".showdates");
-  showdates.innerHTML = ""; // Clear the container
+  showdates.innerHTML = ""; 
 
-  // Create the top row with headers
   const headerRow = document.createElement("ul");
   headerRow.classList.add("showdate__header");
   
   const dateHeader = document.createElement("li");
   dateHeader.innerText = "Date";
+  dateHeader.classList.add("showdate__date");
+  
   
   const venueHeader = document.createElement("li");
   venueHeader.innerText = "Venue";
+  venueHeader.classList.add("showdate__venue");
   
   const locationHeader = document.createElement("li");
   locationHeader.innerText = "Location";
+  locationHeader.classList.add("showdate__location");
 
   headerRow.appendChild(dateHeader);
   headerRow.appendChild(venueHeader);
@@ -76,22 +84,19 @@ async function renderAllShowDates() {
     showdates.appendChild(showdateAdd);
   });
 
-let allShowdates = document.querySelectorAll(".showdate__section"); // Select all relevant elements
-let currentBackground = "lightgrey"; // Default background color
-let activeBackground = "black"; // Background color when active
+let allShowdates = document.querySelectorAll(".showdate__section"); 
+let currentBackground = "#FAFAFA";
+let activeBackground = "#E1E1E1";
 
-// Loop through each showdate and add a click event listener
+
 for (let i = 0; i < allShowdates.length; i++) {
   allShowdates[i].addEventListener("click", function () {
-    // Reset the background of all elements
     for (let j = 0; j < allShowdates.length; j++) {
       allShowdates[j].style.backgroundColor = currentBackground;
-      allShowdates[j].style.color = ""; // Reset text color (optional)
+      allShowdates[j].style.color = ""; 
     }
-
-    // Set the background and text color of the clicked element
     this.style.backgroundColor = activeBackground;
-    this.style.color = "#fff"; // Optional: Make text color white for contrast
+    this.style.color = "#323232"; 
   });
 }}
 

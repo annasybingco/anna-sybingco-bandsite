@@ -17,11 +17,11 @@ function createCommentSection(comment) {
   commentAll.appendChild(commentFilled);
  
   commentAll.classList.add("comments");
-  commentFilled.classList.add("comments__filled");
-  commentImage.classList.add("comments__image")
+  commentFilled.classList.add("comments__filled")
+  commentText.classList.add("comments__text");
+  commentImage.classList.add("comments__image");
   commentTitle.classList.add("comments__title");
-  commentText.classList.add("comments__test")
-  commentCopy.classList.add("comments__copy")
+  commentCopy.classList.add("comments__copy");
 
   commentName.innerText = comment.name;
   const convertedDate = new Date(comment.timestamp).toLocaleDateString();
