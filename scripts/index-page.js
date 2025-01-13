@@ -36,8 +36,10 @@ const bandSiteApi = new BandSiteApi("ac2bf06c-5b5f-4ccb-9b1c-5d24a455bc33");
 async function renderAllComments() {
   const commentList = document.querySelector(".comments-list")
   commentList.innerHTML = "";
- 
   const comments = await bandSiteApi.getComments();
+
+  comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+  
   comments.forEach((comment) => {
       const commentToAdd = createCommentSection(comment);
       commentList.appendChild(commentToAdd);
