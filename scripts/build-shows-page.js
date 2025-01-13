@@ -67,11 +67,8 @@ async function renderAllShowDates() {
   headerRow.appendChild(dateHeader);
   headerRow.appendChild(venueHeader);
   headerRow.appendChild(locationHeader);
-  
-  // Append the header row to the container
   showdates.appendChild(headerRow);
 
-  // Fetch and render the show dates
   const showdateAll = await bandSiteApi.getShowdates();
 
   showdateAll.forEach((showDate) => {
@@ -79,19 +76,26 @@ async function renderAllShowDates() {
     showdates.appendChild(showdateAdd);
   });
 
- const allShowdates = document.querySelectorAll(".showdate__section");
+let allShowdates = document.querySelectorAll(".showdate__section"); // Select all relevant elements
+let currentBackground = "lightgrey"; // Default background color
+let activeBackground = "black"; // Background color when active
 
-  // Add event listeners to each element
-  allShowdates.forEach((showdate) => {
-    showdate.addEventListener("mouseover", () => {
-      showdate.style.backgroundColor = "orange";
-    });
+// Loop through each showdate and add a click event listener
+for (let i = 0; i < allShowdates.length; i++) {
+  allShowdates[i].addEventListener("click", function () {
+    // Reset the background of all elements
+    for (let j = 0; j < allShowdates.length; j++) {
+      allShowdates[j].style.backgroundColor = currentBackground;
+      allShowdates[j].style.color = ""; // Reset text color (optional)
+    }
 
-    showdate.addEventListener("mouseout", () => {
-      showdate.style.backgroundColor = "lightblue";
-    });
+    // Set the background and text color of the clicked element
+    this.style.backgroundColor = activeBackground;
+    this.style.color = "#fff"; // Optional: Make text color white for contrast
   });
-}
+}}
 
 renderAllShowDates();
+
+
  

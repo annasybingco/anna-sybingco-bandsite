@@ -14,7 +14,7 @@
  <header>
     <nav class="navbar">
         <div class="navbar__logo">
-        <a href="#"> <img src="/assets/logos/Logo-bandsite.svg" alt="bandsite-logo"> </a>
+        <a href="./index.html"> <img src="/assets/logos/Logo-bandsite.svg" alt="bandsite-logo"> </a>
         <ul class="navbar__list">
         <li class="navbar__item navbar__item--active"> <a href="./index.html"> Biography</a></li>
         <li class="navbar__item navbar__item--inactive"> <a href="/pages/shows.html">Shows</a></li>
@@ -59,9 +59,10 @@
             <img class="gallery__photo" src="./assets/images/Photo-gallery-9.jpg" alt="concert-image-confetti-on-crowd">
         </div>
     </div>
-<!-- form section -->
-    <section class="form">
-        <h2>Join the conversation</h2>
+<!--old form section -->
+        
+        <!-- <section class="form">
+            <h2>Join the conversation</h2>
         <div class="form__all-fields">
         <div class="form__avatar-container">
         <div class="form__avatar">      
@@ -77,6 +78,27 @@
                 <textarea id="comment" class="form__field form__field--textarea" name="commentText" placeholder="Add a new comment" style="overflow:hidden;" required></textarea>
                 </div>
                 <button class="button">Submit</button>
+            </form>
+        </div>
+    </section> -->
+
+    <!-- new form section -->
+    <section class="form">
+        <h2 class="form__title">Join the Conversation</h2>
+        <div class="form__container">
+            <div class="form__avatar-wrapper">
+                <div class="form__avatar"></div>
+            </div>
+            <form class="form__fields">
+                <div class="form__group">
+                    <label for="fname" class="form__label">Name</label>
+                    <input type="text" id="fname" class="form__input" name="commentName" placeholder="Enter your name" required>
+                </div>
+                <div class="form__group">
+                    <label for="comment" class="form__label">Comment</label>
+                    <textarea id="comment" class="form__input form__input--textarea" name="commentText" placeholder="Add a new comment" required></textarea>
+                </div>
+                <button class="form__button">Submit</button>
             </form>
         </div>
     </section>

@@ -119,6 +119,10 @@ button, .label {
     font-size: 0.875rem;
   }
 }
+input {
+  font-family: "Nunito Sans";
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

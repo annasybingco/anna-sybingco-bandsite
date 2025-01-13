@@ -119,6 +119,10 @@ button, .label {
     font-size: 0.875rem;
   }
 }
+input {
+  font-family: "Nunito Sans";
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -532,24 +536,40 @@ a {
     padding: 1em 2.25em;
   }
 }
+@media screen and (min-width: 1280px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
 
-.form__all-fields {
+.form__title {
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.form__container {
   display: flex;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .form__all-fields {
+  .form__container {
     padding: 0 7em;
     margin-bottom: 1em;
   }
 }
 @media screen and (min-width: 1280px) {
-  .form__all-fields {
-    padding: 0 12em;
+  .form__container {
+    justify-content: flex-start;
+    min-width: 60%;
   }
 }
 
-.form__avatar-container {
+.form__avatar-wrapper {
   padding-top: 2em;
   padding-right: 1em;
 }
@@ -566,25 +586,24 @@ a {
 .form__fields {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   width: 100%;
 }
 
-.form__input {
+.form__group {
   width: 100%;
+  margin-bottom: 1em;
 }
 
 .form__label {
-  display: flex;
-  flex-direction: column;
+  display: block;
   text-transform: uppercase;
   color: #AFAFAF;
-  padding-bottom: 0.25em;
+  margin-bottom: 0.25em;
 }
 
-.form__field {
+.form__input {
   padding: 0.75em;
-  margin: 0.5em 0;
   border: 1px solid #E1E1E1;
   border-radius: 4px;
   box-sizing: border-box;
@@ -592,24 +611,30 @@ a {
   height: 2.25em;
 }
 @media screen and (min-width: 768px) {
-  .form__field {
+  .form__input {
     height: 3em;
     padding: 1em;
   }
 }
 
-.form__field--textarea {
+.form__input--textarea {
   resize: none;
   padding: 0.5em;
+  height: 80px;
 }
 
-.form__wrapper {
-  display: flex;
-  width: 100%;
+.form__button {
+  background-color: #323232;
+  color: #fff;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  align-self: flex-end;
 }
-
-.form__full-width {
-  width: 100%;
+.form__button:hover {
+  background-color: #191919;
 }
 
 .comments-list {
@@ -620,6 +645,7 @@ a {
   display: flex;
   border-bottom: 1px solid black;
   padding: 1em;
+  justify-content: space-between;
 }
 
 .comments {
@@ -638,4 +664,8 @@ a {
 .comments__title {
   display: flex;
   justify-content: space-between;
+}
+
+.comments__test {
+  width: 90%;
 }/*# sourceMappingURL=bio.css.map */
