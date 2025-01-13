@@ -262,38 +262,19 @@ a {
     width: 100%;
   }
 
-.comment {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    padding: 1em;
-
-    &__text {
-        border-bottom: 1px solid $inactive-color; 
-        padding: 1em 0;
-    }
- 
-    @include tablet {
-        padding: 0 7em;
-        margin-bottom: 1em;
+.comments-list {
+    padding: 2em 12em;
 }
 
-    @include desktop {
-        padding: 0 14em;
-    }
+.comments__filled {
+    display: flex;
+    border-bottom: 1px solid black;
+    padding: 1em;
 }
 
 .comments {
     padding-top: 1em;
-    padding-right: 1em;
-   
-    &__info {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 1em;
-    }   
+    padding-right: 1em;  
 
     &__image {
     background-color: $secondary-color;
@@ -303,8 +284,10 @@ a {
     height: 3em;
     border-radius: 50%; 
     }
+}
 
-    &__item {
-    width: 100%;
+.comments__title {
+    display: flex;
+    justify-content: space-between;
 }
-}
+

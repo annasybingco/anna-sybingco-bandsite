@@ -1,19 +1,17 @@
-//SPRINT THREE
-
 function createCommentSection(comment) {
   const commentAll = document.createElement("div");
   const commentFilled = document.createElement("div");
   const commentImage = document.createElement("img");
-  const commentText = document.createElement("p");
-  const commentTitle = document.createElement("p");
+  const commentText = document.createElement("div");
+  const commentTitle = document.createElement("div");
   const commentName = document.createElement("p");
   const commentDate = document.createElement("p");
   const commentCopy = document.createElement("p");
 
   commentTitle.appendChild(commentName);
   commentTitle.appendChild(commentDate);
-  commentText.appendChild(commentCopy);
   commentText.appendChild(commentTitle);
+  commentText.appendChild(commentCopy);
   commentFilled.appendChild(commentImage);
   commentFilled.appendChild(commentText);
   commentAll.appendChild(commentFilled);
@@ -22,6 +20,8 @@ function createCommentSection(comment) {
   commentFilled.classList.add("comments__filled");
   commentImage.classList.add("comments__image")
   commentTitle.classList.add("comments__title");
+  commentText.classList.add("comments__test")
+  commentCopy.classList.add("comments__copy")
 
   commentName.innerText = comment.name;
   const convertedDate = new Date(comment.timestamp).toLocaleDateString();
@@ -38,7 +38,6 @@ async function renderAllComments() {
   commentList.innerHTML = "";
  
   const comments = await bandSiteApi.getComments();
-  console.log(comments)
   comments.forEach((comment) => {
       const commentToAdd = createCommentSection(comment);
       commentList.appendChild(commentToAdd);
@@ -47,32 +46,6 @@ async function renderAllComments() {
 
 renderAllComments();
 
-
-//form from sprint 2
-// const commentListElement = document.querySelector(".comment");
-// const productForm = document.querySelector(".form__fields");
-
-// productForm.addEventListener("submit", (event) => {
-//   event.preventDefault();
-
-//   const newComment = {
-//     name: event.target.commentName.value,
-//     text: event.target.commentText.value,
-//     date: Date.now(),
-//   };
-
-//   comments.unshift(newComment);
-
-//   event.target.commentName.value = "";
-//   event.target.commentText.value = "";
-
-//   loopThroughandAppendComments();
-
-// const latestCommentWrapper = commentListElement.firstChild;
-// latestCommentWrapper.classList.add("form__full-width");
-// });
-
-// new stuff
 const commentForm = document.querySelector(".form__fields");
 
 commentForm.addEventListener("submit", async (event) => {
@@ -82,7 +55,6 @@ commentForm.addEventListener("submit", async (event) => {
     name: event.target.commentName.value,
     comment: event.target.commentText.value,
   };
-  console.log(newCommentAdded)
   
   await bandSiteApi.addComment(newCommentAdded);
   renderAllComments();

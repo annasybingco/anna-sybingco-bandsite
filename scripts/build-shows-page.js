@@ -78,6 +78,20 @@ async function renderAllShowDates() {
     const showdateAdd = createShowdates(showDate);
     showdates.appendChild(showdateAdd);
   });
+
+ const allShowdates = document.querySelectorAll(".showdate__section");
+
+  // Add event listeners to each element
+  allShowdates.forEach((showdate) => {
+    showdate.addEventListener("mouseover", () => {
+      showdate.style.backgroundColor = "orange";
+    });
+
+    showdate.addEventListener("mouseout", () => {
+      showdate.style.backgroundColor = "lightblue";
+    });
+  });
 }
 
 renderAllShowDates();
+ 
